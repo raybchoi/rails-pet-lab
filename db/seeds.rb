@@ -7,7 +7,7 @@ Owner.destroy_all
 Appointment.destroy_all
 # Owners
 owners_data = []
-4.times do
+3.times do
   first = FFaker::Name.first_name
   last = FFaker::Name.last_name
   owners_data << {
@@ -36,7 +36,7 @@ def random_pet_breed
 end
 
 pets_data = []
-6.times do
+10.times do
   pets_data << {
     name: FFaker::Name.first_name,
     breed: random_pet_breed,
@@ -57,7 +57,7 @@ def random_veterinarian
   ["Nurse Joy", "Nurse Patty", "Nurse Cool"].sample
 end
 
-6.times do
+10.times do
 Appointment.create({
 time: DateTime.now + 1, # one day from now
 reason: random_reason,

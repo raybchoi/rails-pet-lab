@@ -31,6 +31,10 @@ class OwnersController < ApplicationController
   end
 
   # TODO: add custom appointments action for convenience
+  def appointments
+    owner_id = params[:id]
+    @owner = Owner.find_by(id: owner_id)
+  end
 
   private
   def owner_params
