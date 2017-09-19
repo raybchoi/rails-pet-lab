@@ -11,6 +11,7 @@ class PetsController < ApplicationController
   def show
     # TODO: set up data for show view
     @pets = Pet.find(params[:id])
+    pet_id = params[:id]
   end
 
   # TODO: set up *new* method with data for new view
@@ -18,6 +19,7 @@ class PetsController < ApplicationController
   def new
     @owner = Owner.find(params[:owner_id])
     @pet = Pet.new
+
   end
 
 

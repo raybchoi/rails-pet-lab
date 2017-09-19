@@ -7,5 +7,8 @@ Rails.application.routes.draw do
   resources :pets, only: [:index, :new, :create]
 end
 # create a new path for pets
-resources :pets, only: :show
+resources :pets, only: [:show, :edit, :update, :destroy] do
+  resources :appointments, only: [:new, :create]
+end
+
 end

@@ -1,0 +1,8 @@
+
+
+<%= form_for @appointment, url:"/pets/#{@pet.id}/appointments", method: "POST" do |f| %>
+  <p>Vet Name:</p> <%= f.text_field :veterinarian %>
+  <p>Reason:</p> <%= f.text_area :reason %>
+  <p>Time:</p> <%= f.datetime_local_field :time %>
+  <%= f.submit 'Save'%>
+<% end %>

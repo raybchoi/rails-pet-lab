@@ -4,7 +4,7 @@
 # Destroy everything to rebuild
 Pet.destroy_all
 Owner.destroy_all
-
+Appointment.destroy_all
 # Owners
 owners_data = []
 4.times do
@@ -45,3 +45,23 @@ pets_data = []
   }
 end
 pets = Pet.create(pets_data)
+
+
+
+# appointments
+def random_reason
+  ["annual checkup", "weekly checkup", "monthly checkup"].sample
+end
+
+def random_veterinarian
+  ["Nurse Joy", "Nurse Patty", "Nurse Cool"].sample
+end
+
+6.times do
+Appointment.create({
+time: DateTime.now + 1, # one day from now
+reason: random_reason,
+veterinarian: random_veterinarian,
+pet: pets.sample
+})
+end
