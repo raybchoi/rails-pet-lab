@@ -1,3 +1,10 @@
 <h1>New Pet</h1>
 <hr>
-<%= render "form" %>
+
+<!-- get a new instance from @pet and once after you post then go to the URL owners -->
+<%= form_for @pet, url:"/owners/#{@owner.id}/pets", method: "POST" do |f| %>
+  <p>Name:</p> <%= f.text_field :name %>
+  <p>Breed:</p> <%= f.text_area :breed %>
+
+  <%= f.submit 'Save'%>
+<% end %>

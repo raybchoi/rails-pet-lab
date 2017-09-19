@@ -3,3 +3,7 @@
 <p><strong>Name:</strong> <%= @owner.first_name %> <%= @owner.last_name %></p>
 <p><strong>Email:</strong> <%= @owner.email %></p>
 <p><strong>Phone Number:</strong> <%= @owner.phone %></p>
+
+<!--  On the owner show view, add a "view this owner's pets" link. Remember to use link_to. The link should go to the path that will show all of that owner's pets. Reference the route table in the Routing Rails guide.-->
+<p><strong>View this owners pets:</strong>
+<%= link_to 'pet details', owner_pets_path(@owner, @pet) %> </p>
